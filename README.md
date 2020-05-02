@@ -1,3 +1,12 @@
+### INSTRUCTIONS DE CONNEXION ET DE PRISE EN MAIN DE l'ENVIRONNEMENT
+
+- Mobaxterm (download)
+- ssh
+- prévoir une clé PPK convertie depuis PEM
+- choix des AVATARS
+https://docs.google.com/document/d/1Ttjzagg3bJqS0FegugDTEztRjqW09G-JyJymwjbhD_M/edit
+- etc.
+
 ### HADOOP
 
 
