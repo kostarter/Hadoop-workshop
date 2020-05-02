@@ -7,6 +7,15 @@
 https://docs.google.com/document/d/1Ttjzagg3bJqS0FegugDTEztRjqW09G-JyJymwjbhD_M/edit
 - etc.
 
+Exemple : 
+Connexion à votre instance centos
+Vos Credentials et IP respectives vous seront envoyés sur le chat
+Installer mobaXterm (https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip) si vous êtes sur Windows
+Une clé SSH .pem vous sera transmise sur le chat
+si elle fournie au format .pem : 
+	Convertissez-la en .ppk(voir mini tuto)https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format
+
+
 ### HADOOP
 
 
