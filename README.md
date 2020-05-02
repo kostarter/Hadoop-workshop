@@ -13,3 +13,7 @@ https://docs.google.com/presentation/d/1_jw9pwtWaE3ewYIU1040arYgoO_jFBoQaDaj-z6l
 https://docs.google.com/presentation/d/1Nih0uINk8dEOluQfcMjw60tvIAQ7rSvY-ca70gCTEAA/edit#slide=id.p
 
 https://docs.google.com/presentation/d/1MAL9PirbAJ7g6z1mYlRag-Vj2I1BmvNAzwpmrEHgCG0/edit
+
+### SPARK LINUX
+
+https://docs.google.com/presentation/d/11YenAY84fo3m1qK9MYPi0GV9HdOz69JgzRreUh1hFMw/edit#slide=id.g71fbd70cfa_0_58
