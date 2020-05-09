@@ -75,21 +75,21 @@ wget https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mkdir /user/hbachkou
+$ hdfs dfs -mkdir /user/my-user
 ```
 
 3 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user.
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -put airports.dat /user/hbachkou
+$ hdfs dfs -put airports.dat /user/my-user
 ```
 
 4 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs).
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -ls /user/hbachkou
+$ hdfs dfs -ls /user/my-user
 ```
 <br/>
 
@@ -99,21 +99,21 @@ $ hdfs dfs -ls /user/hbachkou
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mkdir /user/hbachkou/data
+$ hdfs dfs -mkdir /user/my-user/data
 ```
 
 2 - Déplacer le fichier airports.dat depuis hdfs dans ce répertoire data.
 
 :warning: Spoiler : 
 ```console
-$ hdfs dfs -mv /user/hbachkou/airports.dat /user/hbachkou/data
+$ hdfs dfs -mv /user/my-user/airports.dat /user/my-user/data
 ```
 
 3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous.
 
 :warning: Spoiler :
 ```console
-$ hdfs dfs -chmod 700 /user/hbachkou/data/airports.dat
+$ hdfs dfs -chmod 700 /user/my-user/data/airports.dat
 ```
 
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
@@ -135,5 +135,5 @@ https://hortonworks.com/blog/hdfs-metadata-directories-explained/
 
 Infos des blocs de fichiers :
 ```console
-$ hdfs fsck /user/hbachkou/data/airports.dat -files -blocks -locations
+$ hdfs fsck /user/my-user/data/airports.dat -files -blocks -locations
 ```
