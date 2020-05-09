@@ -8,7 +8,7 @@
 
 3. Lancer la commande suivante en tant que super utilisateur :
 ```console
-$ cbd start
+$ sudo cbd start
 ```
 
 4. Lancer le cluster Sophia sur l'UI Cloudbreak.
@@ -50,6 +50,7 @@ Se connecter en SSH à un des workers du cluster :
 ```console
 ssh -i ./SYLAB.pem cloudbreak@35.180.197.45
 ```
+![alt text](https://i.ibb.co/tYL7W8y/Annotation-2020-05-08-135954.png)
 
 <br/><br/>
 ### HADOOP - TP 1
