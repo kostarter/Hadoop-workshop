@@ -17,8 +17,7 @@ $ cbd start
 
 :warning: Les services doivent être lancés dans le bon ordre (Zookeeper, Ranger, Yarn, HDFS, MapReduce, ...).
 
-
-
+<br/><br/>
 ## Connexion à votre instance Centos :
 
 Vos Credentials et IP respectives vous seront envoyés sur le chat.
