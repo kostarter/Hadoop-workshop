@@ -59,7 +59,8 @@ BUT DU TP :
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
 
 <br/>
-##### Enoncé 1 : Manipulation
+
+#### Enoncé 1 : Manipulation
 
 :information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
 
@@ -90,7 +91,8 @@ $ hdfs dfs -put airports.dat /user/hbachkou
 $ hdfs dfs -ls /user/hbachkou
 ```
 <br/>
-##### Enoncé 1/2 : Manipulation
+
+#### Enoncé 1/2 : Manipulation
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/monavatar”.
 
@@ -116,7 +118,8 @@ $ hdfs dfs -chmod 700 /user/hbachkou/data/airports.dat
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
 
 <br/>
-##### Enconcé 2 : METADATA
+
+#### Enconcé 2 : METADATA
 
 Explorer le mapping réel des fichiers HDFS dans EXT4.
 Localiser les données relatives au fichier chargé dans HDFS lors de la première partie.
