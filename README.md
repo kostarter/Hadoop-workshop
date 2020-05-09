@@ -1,37 +1,132 @@
-### INSTRUCTIONS DE CONNEXION ET DE PRISE EN MAIN DE l'ENVIRONNEMENT
+# Lancement du cluster :
+ 
+### Lancement de Cloudbreak :
 
-- Mobaxterm (download)
-- ssh
-- prévoir une clé PPK convertie depuis PEM
-- choix des AVATARS
-https://docs.google.com/document/d/1Ttjzagg3bJqS0FegugDTEztRjqW09G-JyJymwjbhD_M/edit
-- etc.
+1. Se connecter en tant que l'utilisateur 'cloudbreak' à la machine SYBREAK.
 
-Exemple : 
-Connexion à votre instance centos
-Vos Credentials et IP respectives vous seront envoyés sur le chat
-Installer mobaXterm (https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip) si vous êtes sur Windows
-Une clé SSH .pem vous sera transmise sur le chat
-si elle fournie au format .pem : 
-	Convertissez-la en .ppk(voir mini tuto)https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format
+2. Aller dans le dossier /var/lib/cloudbreak-deployment/Profile.
 
+3. Lancer la commande suivante en tant que super utilisateur :
+```console
+$ cbd start en tant que super utilisateur.
+```
 
-### HADOOP
+4. Lancer le cluster Sophia sur l'UI Cloudbreak.
+
+5. Se connecter à Ambari afin de lancer les services.
+:warning: Les services doivent être lancés dans le bon ordre (Zookeeper, Ranger, Yarn, HDFS, MapReduce, ...).
 
 
 
-### HDFS
+### Connexion à votre instance Centos :
 
-https://docs.google.com/presentation/d/15p_TJb_wqqdxXvj6MnUtta9d2qOPWaGuAEBhGCg67gE/edit#slide=id.g343a74f397_0_0
+Vos Credentials et IP respectives vous seront envoyés sur le chat. 
 
-### HIVE
+Une clé SSH .pem vous sera transmise sur le chat.
 
-https://docs.google.com/presentation/d/1_jw9pwtWaE3ewYIU1040arYgoO_jFBoQaDaj-z6lLAU/edit#slide=id.p
+:warning: Si vous êtes sur Windows :
 
-https://docs.google.com/presentation/d/1Nih0uINk8dEOluQfcMjw60tvIAQ7rSvY-ca70gCTEAA/edit#slide=id.p
+- Installation de Mobaxterm :
+https://download.mobatek.net/2022020030522248/MobaXterm_Portable_v20.2.zip
 
-https://docs.google.com/presentation/d/1MAL9PirbAJ7g6z1mYlRag-Vj2I1BmvNAzwpmrEHgCG0/edit
+La clé est fournie au format .pem : Convertissez-la en .ppk 
 
-### SPARK LINUX
+Pour ce faire suivre le mini-tuto ce-dessous :
 
-https://docs.google.com/presentation/d/11YenAY84fo3m1qK9MYPi0GV9HdOz69JgzRreUh1hFMw/edit#slide=id.g71fbd70cfa_0_58
+```console
+- Convert PEM to PPK :
+
+1. Open PuTTYgen
+3. Click "Load" on the right side about 3/4 down
+4. Set the file type to *.*
+5. Browse to, and Open your .pem file
+6. PuTTY will auto-detect everything it needs, and you just need to click "Save private key" and you can save your ppk key for use with PuTTY
+
+https://stackoverflow.com/questions/3190667/convert-pem-to-ppk-file-format
+```
+
+:warning: Je suis déconnecté très rapidement de Mobaxterm.
+
+
+- Se connecter en SSH à un des workers du cluster :
+ssh -i ./SYLAB.pem cloudbreak@35.180.197.45
+
+
+### HADOOP - TP 1
+LE SYSTÈME DE GESTION DE FICHIER HDFS
+
+:information_source: BUT DU TP :
+Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS
+
+
+##### Enoncé 1 : Manipulation
+
+CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
+
+1 - Télécharger le fichier suivant dans le Système linux via la commande WGET 
+```console
+wget https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat
+```
+
+2 - Créer un répertoire sous HDFS OPTIONNEL 
+[mon_user@ip-172-31-23-69:~]# hdfs dfs -mkdir /user/mon_user
+:warning: Spoiler : 
+```console
+$ hdfs dfs -mkdir /user/hbachkou
+```
+
+3 - Insérer le fichier dans ce répertoire HDFS via la commande PUT dans votre répertoire user
+:warning: Spoiler : 
+```console
+$ hdfs dfs -put airports.dat /user/hbachkou
+```
+
+4 - Vérifier la présence de ce fichier dans votre répertoire hdfs user via la commande LS (hdfs)
+:warning: Spoiler : 
+```console
+$ hdfs dfs -ls /user/hbachkou
+```
+
+
+##### Enoncé 1/2 : Manipulation
+
+1 - Créer un répertoire hdfs “data” dans votre répertoire “user/monavatar”
+:warning: Spoiler : 
+```console
+$ hdfs dfs -mkdir /user/hbachkou/data
+```
+
+2 - Déplacer le fichier airports.dat depuis hdfs dans ce répertoire data
+:warning: Spoiler : 
+```console
+$ hdfs dfs -mv /user/hbachkou/airports.dat /user/hbachkou/data
+```
+
+3 - Modifier les droits hdfs de ce fichier pour le rendre accessible uniquement à vous
+:warning: Spoiler :
+```console
+$ hdfs dfs -chmod 700 /user/hbachkou/data/airports.dat
+```
+
+:information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
+
+
+##### Enconcé 2 : METADATA
+
+Explorer le mapping réel des fichiers HDFS dans EXT4
+Localiser les données relatives au fichier chargé dans HDFS lors de la première partie
+
+* Blocs du fichier
+* Mapping du fichier et des blocs
+* Mapping des blocs vers les serveurs
+
+:information_source: Ressource Utile : 
+https://hortonworks.com/blog/hdfs-metadata-directories-explained/
+
+
+Infos des blocs de fichiers :
+```console
+$ hdfs fsck /user/hbachkou/data/airports.dat -files -blocks -locations
+```
+
+:heavy_check_mark: 
