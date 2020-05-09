@@ -12,6 +12,7 @@ $ cbd start
 ```
 
 4. Lancer le cluster Sophia sur l'UI Cloudbreak.
+![alt text](https://i.ibb.co/5ckWTzn/Screenshot-2020-05-10-Hortonworks-Cloudbreak.png "Start/Stop cluster")
 
 5. Se connecter à Ambari afin de lancer les services.
 
@@ -57,7 +58,7 @@ LE SYSTÈME DE GESTION DE FICHIER HDFS
 BUT DU TP :
 Prendre en main et apprendre à manipuler des fichiers dans l’environnement HDFS. :heavy_check_mark: 
 
-<br/><br/>
+<br/>
 ##### Enoncé 1 : Manipulation
 
 :information_source: CONSULTER PREALABLEMENT LA REFERENCE DES COMMANDES USUELLES EN PAGE 5
@@ -88,7 +89,7 @@ $ hdfs dfs -put airports.dat /user/hbachkou
 ```console
 $ hdfs dfs -ls /user/hbachkou
 ```
-<br/><br/>
+<br/>
 ##### Enoncé 1/2 : Manipulation
 
 1 - Créer un répertoire hdfs “data” dans votre répertoire “user/monavatar”.
@@ -114,7 +115,7 @@ $ hdfs dfs -chmod 700 /user/hbachkou/data/airports.dat
 
 :information_source: Consulter la doc pour les commandes :  mkdir / mv / chmod
 
-<br/><br/>
+<br/>
 ##### Enconcé 2 : METADATA
 
 Explorer le mapping réel des fichiers HDFS dans EXT4.
