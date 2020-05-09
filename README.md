@@ -8,7 +8,7 @@
 
 3. Lancer la commande suivante en tant que super utilisateur :
 ```console
-$ cbd start en tant que super utilisateur.
+$ cbd start
 ```
 
 4. Lancer le cluster Sophia sur l'UI Cloudbreak.
