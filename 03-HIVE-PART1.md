@@ -5,9 +5,9 @@ INGESTION ANALYSE ET TRAITEMENT DE DONNEES
 
 ## ETAPE 1 : Ligne de commande
 
-* Chercher un fichier CSV Open Data de taille moyenne : [here](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip).
+* Chercher un fichier CSV Open Data de taille moyenne : [here](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip)
 
-Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/mon_user)
+Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/mon_user).
 
     * Unzip le fichier : unzip monfichier.zip
     * Ouvrir le fichier : head monfichier.csv
