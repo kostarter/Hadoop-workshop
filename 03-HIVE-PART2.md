@@ -1,6 +1,4 @@
-# HIVE - TP 2
-TABLES EXTERNES - VISUALISATION
-
+# HIVE - TP 2 : TABLES EXTERNES - VISUALISATION
 <br/>
 
 ## Hive: External Tables
