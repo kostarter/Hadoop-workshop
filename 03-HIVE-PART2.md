@@ -66,7 +66,7 @@ SELECT * FROM weather WHERE month = '02';
 
 # Assignment
 
-####Utiliser le dataset suivant :
+#### Utiliser le dataset suivant :
 https://www1.ncdc.noaa.gov/pub/data/ghcn/daily/by_year/
 
 1. Etudier la structure d’un fichier.
