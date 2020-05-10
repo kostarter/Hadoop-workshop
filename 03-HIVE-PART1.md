@@ -42,6 +42,7 @@ use mon_user_db;
 * Changer les droits de votre database directement sur hdfs : utiliser la commande ‘chown’ pour réattribuer les droits à votre user
 
 <br/>
+
 ## ETAPE 2 : Ligne de commande
 
 * Définir la table associée au fichier csv dans Hive (Create Table) en respectant le schéma noté précédemment :
@@ -64,6 +65,7 @@ CREATE TABLE mon_user_table_xxx  (customerID INT,firstName STRING,xxxxxxx STRING
 :warning: SKIP HEADER : tblproperties("skip.header.line.count"="1");
 
 <br/>
+
 ## ETAPE 2/1 : Ligne de commande
 
 * DANS LA CLI HIVE :
@@ -83,6 +85,7 @@ cp /chemin/monfichier-original.csv /chemin/monfichier-a-inserer.csv
 * Une erreur de localité est levée. Explication.
 
 <br/>
+
 ## ETAPE 2/2 : Ligne de commande
 
 * Solution : Charger le fichier dans HDFS (CLi Linux) dans un emplacement de votre choix (sous votre emplacement user).
@@ -114,6 +117,7 @@ Eventuellement rajouter cette ligne également à la fin de votre requête:
 tblproperties("skip.header.line.count"="1");
 
 <br/>
+
 ## Etapes détaillées
 
 :no_entry_sign: **DEPRECATED (NE PAS FAIRE)**
