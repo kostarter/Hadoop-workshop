@@ -5,7 +5,7 @@ INGESTION ANALYSE ET TRAITEMENT DE DONNEES
 
 ## ETAPE 1 : Ligne de commande
 
-* Chercher un fichier CSV Open Data de taille moyenne : [here](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip)
+* Chercher un fichier CSV Open Data de taille moyenne : [here](https://raw.githubusercontent.com/hortonworks/data-tutorials/master/tutorials/hdp/how-to-process-data-with-apache-hive/assets/driver_data.zip) :link:
 
 Utiliser la commande wget DANS VOTRE REPERTOIRE LOCAL (/home/mon_user).
 
@@ -110,8 +110,9 @@ CREATE TABLE mon_user_table_xxx (
    firstName STRING,
    xxxxxx STRING,
    xxxxxxx TIMESTAMP
-  ) ROW FORMAT DELIMITED
-    FIELDS TERMINATED BY ','
+) 
+   ROW FORMAT DELIMITED
+   FIELDS TERMINATED BY ','
 STORED AS TEXTFILE; //OBLIGATOIRE SI FICHIER ENTREE = CSV
 ```
 
@@ -120,7 +121,7 @@ tblproperties("skip.header.line.count"="1");
 
 * Afficher les données insérées :        
 ```sql
-SELECT * from mon_user_ma_table_xxx;
+SELECT * FROM mon_user_ma_table_xxx;
 ```
 
 <br/>
