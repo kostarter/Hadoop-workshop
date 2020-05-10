@@ -92,15 +92,15 @@ cp /chemin/monfichier-original.csv /chemin/monfichier-a-inserer.csv
 
 * Solution : Charger le fichier dans HDFS (CLi Linux) dans un emplacement de votre choix (sous votre emplacement user).
 
+:warning: Ne pas oublier de faire une copie !!
+
 * Rejouer la commande précédente, cette fois sans le “local”.
 ```console
-LOAD DATA LOCAL INPATH ’/chemin/sur/hdfs/monfichier-a-inserer.csv' OVERWRITE INTO TABLE mon_user_ma_table_xxx;
+LOAD DATA INPATH ’/chemin/sur/hdfs/monfichier-a-inserer.csv' OVERWRITE INTO TABLE mon_user_ma_table_xxx;
 ```
 
-* Afficher les données insérées :        
-```sql
-SELECT * from mon_user_ma_table_xxx;
-```
+* Une erreur de format est levée. Explication.
+Error: The file that you are trying to load does not match the file format of the destination table.
 
 ##### Formatage de la requête 
 
@@ -117,6 +117,11 @@ STORED AS TEXTFILE; //OBLIGATOIRE SI FICHIER ENTREE = CSV
 
 Eventuellement rajouter cette ligne également à la fin de votre requête:
 tblproperties("skip.header.line.count"="1");
+
+* Afficher les données insérées :        
+```sql
+SELECT * from mon_user_ma_table_xxx;
+```
 
 <br/>
 
